@@ -6,7 +6,7 @@
         <span>This is a sample instruction.</span>
       </template>
     </AuthHeading>
-    <AuthOtp />
+    <AuthOtp @update:otp="(e) => (otp = e)" />
     <div class="flex flex-col gap-y-4">
       <Textfield
         v-model="newPassword"
@@ -33,11 +33,12 @@
 import { ATTR_TYPE_PASSWORD } from '~/constants/common'
 import { CONFIRM_FORGOT_PASSWORD } from '~/constants/routes'
 
+const otp = ref('')
 const newPassword = ref('')
 const confirmNewPassword = ref('')
 
 async function confirmForgotPassword() {
-  console.log(newPassword.value)
+  console.log(newPassword.value, otp.value)
   await navigateTo(CONFIRM_FORGOT_PASSWORD)
 }
 
