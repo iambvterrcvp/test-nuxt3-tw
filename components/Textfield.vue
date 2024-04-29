@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { INPUT_TYPE_TEXT } from '~/constants/textfield'
+import { ATTR_TYPE_TEXT } from '~/constants/common'
 
 const props = defineProps({
   id: {
@@ -42,7 +42,7 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: INPUT_TYPE_TEXT,
+    default: ATTR_TYPE_TEXT,
   },
   modelValue: {
     type: String,
